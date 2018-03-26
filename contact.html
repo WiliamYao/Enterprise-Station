@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>某某有限公司</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<script src="js/adf75cc16be348138a7e2bb27cc5e38f.js" type="text/javascript"></script>  
+<script>
+window.onload = function(){
+	var deviceWidth = document.documentElement.clientWidth;
+	document.documentElement.style.fontSize=100*document.documentElement.clientWidth/750+'px';
+}
+</script>
+
+<!-- 解决ie9以下浏览器对HTML5新元素的兼容性问题 -->
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div id="box">
+	<header class="header">
+	<div class="logo">我是logo</div>
+	<a href="###" class="search">
+		<!--<span>目的地搜索</span>-->	
+	</a>
+	<div class="search-in-box">
+		<input type="text" class="search-in line"/>
+		<a href="" class="search-in-txt">搜索</a>
+	</div>
+	<div id="dl-menu" class="dl-menuwrapper">
+		<button id="dl-menu-button">Open Menu</button>
+		<ul class="dl-menu">
+			<li><a href="index.html">网站首页</a></li>
+			<li><a href="company.html">公司简介</a></li>
+			<li><a href="new-list.html">新闻中心</a></li>
+			<li><a href="product-list.html">产品展示</a></li>
+			<li><a href="picture.html">公司相册</a></li>
+			<li><a href="messages.html">在线留言</a></li>
+			<li><a href="contact.html">联系我们</a></li>
+		</ul>
+	</div>
+   </header>
+   <div class="clear"></div>
+   <!--banner轮播开始-->
+	<section class="banner clear">
+	    <div id="focus" class="focus banner clear">
+	        <div class="hd">
+	            <ul>
+	            	<li></li>
+	            </ul>
+	        </div>
+	        <div class="bd">
+	            <ul>
+	                    <li><a href="#"><img src="picture/banner2.jpg" width="100%" height="100%"></a></li>
+	                    <li><a href="#"><img src="picture/banner3.jpg" width="100%" height="100%"></a></li>
+	                    <li><a href="#"><img src="picture/banner4.jpg" width="100%" height="100%"></a></li>
+	                    <li><a href="#"><img src="picture/banner5.jpg" width="100%" height="100%"></a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</section>
+	<div class="clear"></div>
+	<div class="cont">
+	<div class="about1">
+		<h3>
+	  		<span>联系我们</span>
+	  		<span>Contact</span>
+  		</h3>
+   </div>
+    <div class="contact">
+       <h6>山东某某有限公司</h6>
+    	<p>电话：0539-8800978</p>
+		<p>Q Q：2254898878</p>
+		<p>微信：sdlwkj</p>
+		<p>地址：临沂市经济开发区中印软件产业园（临沂云计算中心）</p>
+    </div>
+    <!--百度地图容器-->
+    <div style="width:90%;height:300px;border:#ccc solid 1px;font-size:12px; margin:0 auto; margin-top: 0.2rem;" id="map"></div>
+  
+
+
+	</div>	
+	<div class="clear"></div>
+	<div class="foot">
+		<ul class="foot_nav">
+		    <li>友情链接：</li>
+			<li><a href="#">临网汇商</a></li>
+			<li><a href="#">临网CMS</a></li>
+			<li><a href="#" class="none">山东临网</a></li>
+		</ul>
+		<div class="clear"></div>
+		<p class="p1">xxxxxxxxxxx版权所有</p>
+		<p>联系地址：山东省临沂市XXXXXXXXXXXXXXXX </p>    
+    <p>电话：13853945671</p>
+		<p class="p2">Copyright © 2014-2017 山东临网 版权所有 Power by 山东临网</p>
+	</div>
+</div>
+  <!-- 导航   -->
+<script type="text/javascript" src="js/jquery1.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script type="text/javascript" src="js/jquery.dlmenu.js"></script>
+<script type="text/javascript">
+$(function(){
+	$( '#dl-menu' ).dlmenu();
+});
+</script>
+<script type="text/javascript">
+	$(".search").click(
+		function(){
+			$(".search-in-box").slideToggle(300);
+		}
+	)
+</script>
+<!-- banner -->
+<script src="js/touchslide.1.1.js"></script>
+<script type="text/javascript">
+	TouchSlide({
+	slideCell: "#focus",
+		titCell: ".hd ul", //开启自动分页 autoPage: true ，此时设置 titCell 为导航元素包裹层
+		mainCell: ".bd ul", 
+		effect: "leftLoop", 
+		autoPlay: true,//自动播放
+		autoPage: true, //自动分页
+		
+		switchLoad: "_src" //切换加载，真实图片路径为"_src";
+}); 
+	
+</script>
+<!-- map -->
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(118.439262,35.01435),19);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"我的备注",title:"某某公司",imageOffset: {width:0,height:3},position:{lat:35.014735,lng:118.438679}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+</body>
+</html>
